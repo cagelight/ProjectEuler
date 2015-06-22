@@ -1,7 +1,5 @@
-    section .text
+    section .projecteuler
     global project_euler_nasm_solution
-
-extern printf
 
 add2sum:
     add esi,ecx
@@ -31,6 +29,3 @@ project_euler_nasm_solution:
     jne floop
     mov rax, rsi
     ret
-
-
-message db "Register = %08X", 10, 0
