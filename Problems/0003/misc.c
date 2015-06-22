@@ -5,5 +5,5 @@ extern char const * project_euler_problem_description() {
 }
 
 extern uint64_t project_euler_loop_test_count() {
-	return 1;
+	return 50;
 }
