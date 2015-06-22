@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.0.4)
 set(ProjectName "ProjectEuler" CACHE STRING "Project Name")
 project(${ProjectName})
 
-set(CMAKE_BUILD_TYPE "DEBUG")
+set(CMAKE_BUILD_TYPE "RELEASE")
 
 set(CMAKE_INSTALL_PREFIX "install")
 

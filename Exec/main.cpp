@@ -51,9 +51,10 @@ typedef uint64_t(*pe_loopc)(void);
 #define RUN_SOLUTION( NAME, VAR ) \
 	if (solution_##VAR) { \
 		printf("Running "#NAME" Solution...\n"); \
+		uint64_t sol{0}; \
 		start = std::chrono::high_resolution_clock::now(); \
-		for (uint64_t i = 0; i < loop_count - 1; i++) solution_##VAR(); \
-		printf("Solution: %li\n", solution_##VAR()); \
+		for (uint64_t i = 0; i < loop_count; i++) sol = solution_##VAR(); \
+		printf("Solution: %li\n", sol); \
 		completion_##VAR = std::chrono::duration_cast<pe_timeunit>(std::chrono::high_resolution_clock::now() - start).count(); \
 		printf("================\n"); \
 	} \
@@ -109,9 +110,9 @@ int main(int argc, char * * argv) {
 	pe_timeunit dur;
 
 	if (prob_desc) {
-		printf("\n================================\n%s\n", prob_desc());
+		printf("\n================================\n%s\nRunning %li time(s)...\n", prob_desc(), loop_count);
 	}
-	printf("\n================================\n");
+	printf("================================\n");
 	RUN_SOLUTION( NASM, nasm )
 	RUN_SOLUTION( C, c )
 	RUN_SOLUTION( C++, cxx )

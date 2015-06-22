@@ -3,7 +3,7 @@
 
 extern uint64_t project_euler_c_solution() {
 
-	uint64_t sum = 0;
+	volatile uint64_t sum = 0;
 	uint32_t A = 1;
 	uint32_t B = 1;
 
