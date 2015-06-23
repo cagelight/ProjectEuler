@@ -54,14 +54,14 @@ typedef uint64_t(*pe_loopc)(void);
 		uint64_t sol{0}; \
 		start = std::chrono::high_resolution_clock::now(); \
 		for (uint64_t i = 0; i < loop_count; i++) sol = solution_##VAR(); \
-		printf("Solution: %li\n", sol); \
+		printf("Solution: %lu\n", sol); \
 		completion_##VAR = std::chrono::duration_cast<pe_timeunit>(std::chrono::high_resolution_clock::now() - start).count(); \
 		printf("================\n"); \
 	} \
 
 #define PRINT_TIMES( NAME, VAR ) \
 	if (completion_##VAR) { \
-		printf("%li "#NAME" Solution completed in %lf milliseconds.\n", loop_count, completion_##VAR); \
+		printf("%li "#NAME" Solution(s) completed in %lf milliseconds.\n", loop_count, completion_##VAR); \
 	} \
 
 int main(int argc, char * * argv) {

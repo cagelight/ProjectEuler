@@ -4,8 +4,8 @@
 #include <stdbool.h>
 
 extern uint64_t project_euler_c_solution() {
-	uint64_t highnum = 0;
-	uint64_t curnum = 0;
+	volatile uint64_t highnum = 0;
+	volatile uint64_t curnum = 0;
 	for (uint64_t A = 999; A >= 100; A--) {
 		for (uint64_t B = 999; B >= 100; B--) {
 
