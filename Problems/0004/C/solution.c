@@ -4,10 +4,15 @@
 #include <stdbool.h>
 
 extern uint64_t project_euler_c_solution() {
-	volatile uint64_t highnum = 0;
-	volatile uint64_t curnum = 0;
-	for (uint64_t A = 999; A >= 100; A--) {
-		for (uint64_t B = 999; B >= 100; B--) {
+
+	volatile uint64_t highlimit = 999;
+	volatile uint64_t lowlimit = 100;
+
+	uint64_t highnum = 0;
+	uint64_t curnum = 0;
+
+	for (uint64_t A = highlimit; A >= lowlimit; A--) {
+		for (uint64_t B = highlimit; B >= lowlimit; B--) {
 
 			curnum = A * B;
 			int num = snprintf(NULL, 0, "%lu", curnum);
