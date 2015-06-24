@@ -13,18 +13,10 @@ bool is_prime(uint64_t num) {
 }
 
 extern uint64_t project_euler_c_solution() {
-
-	volatile uint64_t var = 600851475143;
-
-	uint64_t start = sqrt(var);
-	uint64_t lpf = 0;
-
-	for (uint64_t i = 2; i <= start; i++) {
-		if (var % i != 0) continue;
-		uint64_t test = var / i;
-		if (is_prime(test)) return test;
-		if (is_prime(i)) lpf = i;
+	volatile uint64_t limit = 10001;
+	uint64_t cur = 0;
+	for (uint64_t i = 0;;i++) {
+		if (is_prime(i)) cur++;
+		if (cur == limit) return i;
 	}
-
-	return lpf;
 }
